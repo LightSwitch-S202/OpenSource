@@ -8,9 +8,12 @@ spring:
   cors:
     domain: http://localhost:5555
   datasource:
-    url: jdbc:postgresql://127.0.0.1/lightswitch
-    username: lightswitch2024
-    password: switchlight2024!
+#    url: jdbc:postgresql://127.0.0.1/lightswitch
+#    username: lightswitch2024
+#    password: switchlight2024!
+    url: jdbc:postgresql://43.203.234.163/testdb
+    username: testuser
+    password: 1234
     driver-class-name: org.postgresql.Driver
   jpa:
     database: postgresql
