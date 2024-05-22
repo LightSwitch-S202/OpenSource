@@ -1,9 +1,5 @@
 package com.lightswitch.core.common.config
 
-import com.lightswitch.core.domain.domain.repository.DomainRepository
-import jakarta.annotation.PostConstruct
-import org.aspectj.lang.annotation.Before
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.web.cors.CorsConfiguration
