@@ -7,7 +7,7 @@ echo "도메인: $domain"
 prefix="$prefix"
 echo "prefix: $prefix"
 
-git clone https://github.com/LightSwitch-S202/LightSwitch.git
+git clone https://github.com/LightSwitch-S202/OpenSource.git
 cd /LightSwitch
 
 echo frontend build
