@@ -1,0 +1,24 @@
+server:
+  port: 8000
+  servlet:
+    context-path: /api
+spring:
+  application:
+    name: core-service
+  cors:
+    domain: http://localhost:5555
+  datasource:
+#    url: jdbc:postgresql://127.0.0.1/lightswitch
+#    username: lightswitch2024
+#    password: switchlight2024!
+#    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://43.203.234.163:5432/testdb
+    username: testuser
+    password: 1234
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
