@@ -1,17 +1,8 @@
 import axios from '@api/axios';
 import { AxiosError, AxiosResponse } from 'axios';
-import { SendAuthCodeData, ConfirmAuthCodeData, SignUpData } from '@/types/User';
+
 import { BaseResponse } from '@/types/Api';
-export async function sendAuthCode<T>(
-  data: SendAuthCodeData,
-  onSuccess: (data: T) => void,
-  onFail: (err: AxiosError) => void,
-): Promise<void> {
-  axios
-    .post<BaseResponse<T>>('/api/v1/mail/send', data)
-    .then((res: AxiosResponse<BaseResponse<T>>) => onSuccess(res.data.data))
-    .catch((err: AxiosError) => onFail(err));
-}
+import { ConfirmAuthCodeData, SignUpData } from '@/types/User';
 
 export async function confirmAuthCode<T>(
   data: ConfirmAuthCodeData,

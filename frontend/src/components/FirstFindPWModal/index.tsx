@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 
-import { confirmAuthCode, sendAuthCode } from '@/api/signup/signupAxios';
+import { confirmAuthCode } from '@/api/signup/signupAxios';
 import * as S from '@/components/FirstFindPWModal/indexStyle';
 import { AuthAtom } from '@/global/AuthAtom';
 import { ConfirmAuthCodeData } from '@/types/User';
