@@ -5,7 +5,7 @@ import { useRecoilState } from 'recoil';
 import { confirmAuthCode, sendAuthCode } from '@/api/signup/signupAxios';
 import * as S from '@/components/FirstFindPWModal/indexStyle';
 import { AuthAtom } from '@/global/AuthAtom';
-import { SendAuthCodeData, ConfirmAuthCodeData } from '@/types/User';
+import { ConfirmAuthCodeData } from '@/types/User';
 type Props = {
   isFirstFindPWModal: boolean;
   onClose: () => void;
@@ -61,25 +61,9 @@ const BeforeFindPW: React.FC<Props> = ({
     setAuthCode(e.target.value);
   };
 
-  const handleSendAuthCode = (): void => {
-    const sendAuthCodeData: SendAuthCodeData = {
-      email: email,
-    };
-
-    sendAuthCode<SendAuthCodeData>(
-      sendAuthCodeData,
-      // eslint-disable-next-line @typescript-eslint/no-empty-function
-      () => {},
-      (err) => {
-        console.log(err);
-      },
-    );
-  };
-
   const handleConfirmAuthCode = (): void => {
     const confirmAuthCodeData: ConfirmAuthCodeData = {
       email: email,
-      authCode: authCode,
     };
 
     confirmAuthCode<boolean>(
@@ -117,27 +101,11 @@ const BeforeFindPW: React.FC<Props> = ({
           {email && !emailCheck && <S.WarnText>유효하지 않은 형식입니다.</S.WarnText>}
         </S.InputBox>
         <S.InputBox>
-          <S.SendMailButton onClick={handleSendAuthCode}>
-            이메일 인증 키 받기
-          </S.SendMailButton>
           <S.AuthConfirmWrapper>
-            <S.Input
-              type="text"
-              placeholder="인증 키"
-              style={{ width: '100%' }}
-              value={authCode}
-              onChange={handleAuthCode}
-              disabled={isAuth}
-            />
             <S.ConfirmButton onClick={handleConfirmAuthCode} $isAuth={isAuth}>
               확인
             </S.ConfirmButton>
           </S.AuthConfirmWrapper>
-          {isAuth ? (
-            <S.Text>인증되었습니다.</S.Text>
-          ) : (
-            <S.WarnText>인증이 필요합니다.</S.WarnText>
-          )}
           <S.ButtonWrapper>
             <S.CancleButton onClick={handleCancle}>취소</S.CancleButton>
           </S.ButtonWrapper>

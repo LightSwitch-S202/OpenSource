@@ -40,6 +40,10 @@ export type DeleteUserData = {
   password: string;
 };
 
+export type ConfirmAuthCodeData = {
+  email: string;
+};
+
 export type PWData = {
   email: string;
   newPassword: string;
