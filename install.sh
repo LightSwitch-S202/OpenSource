@@ -8,7 +8,7 @@ prefix="$prefix"
 echo "prefix: $prefix"
 
 git clone https://github.com/LightSwitch-S202/OpenSource.git
-cd /LightSwitch
+cd /OpenSource
 
 echo frontend build
 cd ./frontend
@@ -23,13 +23,13 @@ cd /var/www/html
 if [ -n "$prefix" ]; then
   mkdir /var/www/html$prefix
 fi
-cp -r /LightSwitch/frontend/dist/* /var/www/html$prefix
+cp -r /OpenSource/frontend/dist/* /var/www/html$prefix
 
 nginx_config="/etc/nginx/sites-enabled/default"
 sed -i "s|\$prefix|${prefix:-}|g" $nginx_config
 service nginx start
 
-cd /LightSwitch
+cd /OpenSource
 
 echo backend build
 cd ./backend/core-service
