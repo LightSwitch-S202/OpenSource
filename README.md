@@ -19,6 +19,7 @@ LightSwitch는 오픈소스 피쳐플래깅 솔루션으로, 가볍고 편리하
 ```
 $ docker pull lightswitch2024/lightswitch:latest
 ```
+<br/>
 
 Case 1 (SSL적용 X)
 // 컨테이너 실행
@@ -29,9 +30,9 @@ $ docker run -d -p 5555:5555 -e domain=http://lightswitch.kr:5555 lightswitch202
 - ip:5555 주소로 접속한다면 lightswitch의 로그인 창이 뜨고, 회원가입을 진행한 후 이용하실 수 있습니다.
 - 플래그에 관한 기능은 lightswitch.kr에서 제공하는 기능과 동일합니다.
 - 오픈소스와 sdk를 연결하고자 한다면, endpoint를 기존의 lightswitch.kr에서 ip:5555로 변경하시면 됩니다.
-
-
-
+  
+<br/>
+<br/>
 
 Case 2 (SSL적용 O)
 ```
@@ -41,6 +42,9 @@ $ docker run -d -p 5555:5555 -e domain=https://lightswitch.kr -e prefix=/lightsw
 - 사용하시는 Nginx에서 SSL이 적용되어 있다면, domain은 다음과 같이 포트 번호를 지워주시기 바랍니다.
 - 또한, Nginx에서 Reverse Proxy하려는 Path(예시에서는 /lightswitch)를 prefix에 넣어주시기 바랍니다.
 - 또한 아래와 같은 Nginx 설정이 필요합니다.
+  
+<br/>
+<br/>
 
 ```
 location /lightswitch {
@@ -57,7 +61,8 @@ location /lightswitch {
 	proxy_set_header Connection "";
 }
 ```
-
+<br/>
+<br/>
 
 - 또한, 추가적인 CORS 설정이 필요한 경우
 - 해당 path로 domains라는 이름으로 원하시는 CORS 설정 주소를 추가하여
