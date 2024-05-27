@@ -63,6 +63,7 @@ location /lightswitch {
 - 해당 path로 domains라는 이름으로 원하시는 CORS 설정 주소를 추가하여
 - POST요청을 보내시면 추가적인 CORS설정이 완료됩니다.
 
+```
 path: {your_endpoint}/api/v1/domain/cors
 method: POST
 {
@@ -71,3 +72,4 @@ method: POST
 		...
 	]
 }
+```
