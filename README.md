@@ -20,7 +20,7 @@ LightSwitch는 오픈소스 피쳐플래깅 솔루션으로, 가볍고 편리하
 $ docker pull lightswitch2024/lightswitch:latest
 ```
 
-``` Case 1 (SSL적용 X)
+Case 1 (SSL적용 X)
 // 컨테이너 실행
 // run 실행 시 frontend, backend build가 이루어지므로 약간의 시간이 소요됩니다.
 ```
@@ -33,7 +33,7 @@ $ docker run -d -p 5555:5555 -e domain=http://lightswitch.kr:5555 lightswitch202
 
 
 
-``` Case 2 (SSL적용 O)
+Case 2 (SSL적용 O)
 ```
 $ docker run -d -p 5555:5555 -e domain=https://lightswitch.kr -e prefix=/lightswitch lightswitch2024/lightswitch:latest
 ```
